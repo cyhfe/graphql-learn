@@ -41,7 +41,6 @@ const menus = [
 ]
 
 function Navbar({ collapsed }) {
-  console.log(collapsed)
   return (
     <div className="navbar">
       <Link

@@ -1,9 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useState } from "react"
-import { Navbar } from "./components"
-import { Layout } from "antd"
-const { Header, Footer, Sider, Content } = Layout
+import { useState } from "react"
+import { Navbar, Main } from "./components"
+import { Layout, Typography } from "antd"
+import { Link } from "react-router-dom"
+import { css } from "@emotion/react"
+
+const { Footer, Sider, Content } = Layout
 
 const App = () => {
   const [collapsed, setCollapsed] = useState(false)
@@ -26,8 +29,25 @@ const App = () => {
           <Navbar collapsed={collapsed} />
         </Sider>
         <Layout style={{ marginLeft: 200 }}>
-          <Content>content</Content>
-          <Footer>footer</Footer>
+          <Content>
+            <Main />
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            <Typography.Text type="secondary">
+              Copyright © 2022
+              <Link
+                to="/"
+                css={css`
+                  color: #91d5ff;
+                  margin-left: 1rem;
+                `}
+              >
+                Crypto Currency Inc.
+              </Link>{" "}
+              <br />
+              All Rights Reserved.
+            </Typography.Text>
+          </Footer>
         </Layout>
       </Layout>
     </div>
